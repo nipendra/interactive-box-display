@@ -90,7 +90,7 @@ const Index = () => {
         }, (i+1) * 1000);
       });
     }
-  }, [clickedBoxs, boxes.length]);
+  }, [clickedBoxs, boxes]);
 
   const handleBoxClick = (boxId: number) => {
     setBoxes(prevBoxes => {
