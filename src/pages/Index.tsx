@@ -161,7 +161,7 @@ const Index = () => {
                 <p>Click boxes to turn them green. When all are green, they'll revert to red in reverse order.</p>
               </div>
               
-              <div>
+              <div style={{display:'flex', justifyContent:'center'}}>
                 {layoutType === 'grid' ?
                   <GridLayout boxes={boxes} onBoxClick={handleBoxClick}  isReverting={isReverting}/> : 
                   layoutType === 'c-shape' ?

@@ -13,15 +13,6 @@ interface CShapeLayoutProps {
 }
 
 const CShapeLayout: React.FC<CShapeLayoutProps> = ({ boxes, onBoxClick, isReverting }) => {
-  const calculateCShape = (totalBoxes: number) => {
-    let top = Math.floor(totalBoxes / 4);
-    top = Math.max(top, 1); // ensure at least 1
-    const bottom = top;
-    const middle = totalBoxes - top - bottom;
-
-    return { top, middle, bottom };
-  };
-
   function calculatePatternDimensions(boxsCount:number) {
 
     const W = Math.floor((boxsCount + 1) / 3);
@@ -37,8 +28,6 @@ const CShapeLayout: React.FC<CShapeLayoutProps> = ({ boxes, onBoxClick, isRevert
 
 
 const {width, height} = calculatePatternDimensions(boxes.length);
-
-console.log(width, height, "ff");
 
 function generatePatternString(width: number, height: number) {
     let boxIndex = 0;
