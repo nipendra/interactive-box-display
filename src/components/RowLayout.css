@@ -1,0 +1,48 @@
+/* Row layout */
+.row-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Row box styling */
+.row-box {
+  height: 50px;
+  width: 50px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #e74c3c;
+  flex: 0 0 auto;
+}
+
+.row-box.red {
+  background: #e74c3c;
+  border-color: #c0392b;
+}
+
+.row-box.green {
+  background: #27ae60;
+  border-color: #229954;
+  cursor: not-allowed;
+}
+
+.row-box:hover:not(:disabled):not(.green) {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.row-box:disabled {
+  cursor: not-allowed;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
