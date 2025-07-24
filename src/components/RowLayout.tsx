@@ -21,6 +21,9 @@ const RowLayout: React.FC<RowLayoutProps> = ({ boxes, onBoxClick, isReverting}) 
           onClick={() => onBoxClick(box.id)}
           disabled={isReverting || box.isGreen}
           className={`box ${box.isGreen ? 'green' : 'red'}`}
+          style={{
+            cursor: (box.isGreen || isReverting) ? "not-allowed" : "pointer",
+          }}
         >
         </button>
       ))}

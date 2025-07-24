@@ -70,6 +70,9 @@ function generatePatternString(width: number, height: number) {
             onClick={() => onBoxClick(box.id)}
             disabled={box.isGreen || isReverting}
             className={`box ${box.isGreen ? 'green' : 'red'}`}
+            style={{
+              cursor: (box.isGreen || isReverting) ? "not-allowed" : "pointer",
+            }}
           />
         );
     }

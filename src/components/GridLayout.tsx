@@ -13,14 +13,23 @@ interface GridLayoutProps {
 }
 
 const GridLayout: React.FC<GridLayoutProps> = ({ boxes, onBoxClick, isReverting }) => {
+
+  const totalBox = boxes.length;
+  const columns = Math.ceil(Math.sqrt(totalBox));
   return (
-    <div className="grid-container">
+    <div 
+      className="grid-container"
+      style={{ gridTemplateColumns: `repeat(${columns}, 50px)`}}
+      >
       {boxes.map((box) => (
         <button
           key={box.id}
           onClick={() => onBoxClick(box.id)}
           disabled={ box.isGreen || isReverting}
           className={`box ${box.isGreen ? 'green' : 'red'}`}
+          style={{
+            cursor: (box.isGreen || isReverting) ? "not-allowed" : "pointer",
+          }}
         >
         </button>
       ))}
